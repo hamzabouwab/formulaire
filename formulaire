@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'poppins';
+        }
+        body{
+            min-height: 100vh;
+            background-color:rgb(201, 201, 201);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'montserrat';
+            background-image: url(https://cdn.pixabay.com/photo/2017/09/11/15/58/sunset-2739472_960_720.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        form{
+            margin:8vw auto;
+            padding:8vw 10vw;
+            background-color: rgba(0, 0, 0, 0.466);
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.384);
+            border: 1px solid rgb(248, 232, 0);
+            color: white;
+            font-size: 13px;
+            width: 70vw;
+        }
+        form>h1{
+            display: block;
+            text-align: center;
+            margin-bottom:8vw;
+            
+            font-family: 'poppins';
+            font-size:2.9rem;
+        }
+        form input[type='date']{
+            padding: 10px 5px;
+            padding-bottom: 5px;
+        }
+        form input[type='radio']:checked{
+           
+            background-color:rgb(248, 232, 0);
+        }
+        .input-container{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin:1.5rem;
+        }
+        .input-container input[type="submit"]{
+            border: 3px solid rgb(248, 232, 0);
+            border-radius: 10px 0;
+            color: rgb(248, 232, 0);
+            margin: 5px 0;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            font-family: 'roboto';
+            font-weight: bold;
+
+        }
+        .input-container input[type="submit"]:hover{
+            background-color: rgb(248, 232, 0);
+            color: rgb(43, 43, 43);
+            letter-spacing: 3px;
+        }
+        
+        input{
+            padding: 10px 15px;
+            outline: 0;
+            transition: .1s ease-in-out;
+            border: 0;
+            color: white;
+            border-bottom: 1px solid rgb(248, 232, 0);
+;           width: 100%;
+            background-color: transparent;
+            transition: .3s ease-in-out;
+            font-family: 'poppins';
+        }
+        input+label{
+            color: rgb(255, 255, 255);
+            transform: translateY(40px);
+            transition: .3s ease-in-out;
+
+        }
+        input:focus{
+            border-bottom:1px solid rgb(248, 232, 0) ;
+            background-color: rgb(248, 232, 0);
+            color: black;
+            border-radius: 10px 0;
+
+        }
+        input+label{
+            transform: translateY(-25px);
+        }
+        input:focus+label{
+            transform: translateY(-60px);
+            color: rgb(255, 255, 255);
+
+        }
+        textarea{
+            background-color: rgba(255, 255, 255, 0.281);
+            outline: 0;
+            padding:1rem;
+            border-color:rgb(248, 232, 0) ;
+            color: white;
+            margin-top: 5px;
+            font-size: 15px;
+        }
+        .rb .radioButton{
+            width: 10px;
+            height: 10px;
+            border-radius:50% ;
+            background: transparent;
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgb(255, 255, 255);
+            padding: 5px;
+        }
+        .rb label{
+            margin-left: 5px ;
+            margin-right:10px ;
+            ;
+
+        }
+        .rb label:first-child{
+            margin-right:20px;
+        }
+        .rb{
+            margin: 2.4vw;
+            padding: 10px 0;
+
+            margin-bottom:  2.5rem ;
+            margin-top:  3rem ;
+            border-left: 3px solid rgb(248, 232, 0);
+
+            
+        }
+        #Annuler{
+            background-color: rgb(248, 232, 0);
+            color: rgb(43, 43, 43);
+        }
+        #Annuler:hover{
+            background-color: rgb(255, 255, 255) ;
+            color: rgb(36, 36, 36);
+            border-color:rgb(252, 252, 252);
+            
+
+        }
+        header img{
+            position: absolute;
+            top:20px;
+            left: 40px;
+            width: 40px;
+            color: tomato;
+        }
+        @media (max-width:800px) {
+            form{
+                margin: 0;
+                padding:10vw 5vw ;
+                width: 100%;
+                border: 0;
+                border-radius:0 ;
+            }
+            .rb{
+                margin-left: 5.8vw;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+     
+    </header>
+    <form action="">
+        <h1>Formulaire d'inscription</h1>
+        <div class="container">
+            <div class="input-container">
+              <input id="name" type="text"><label for="name">Nom complet</label>  
+            </div>
+            <div class="input-container">
+                <input id="ville" type="text"><label for="ville">Ville</label>  
+              </div>
+              <div class="input-container">
+                <input id="date" type="date">
+              </div>
+              <div class="rb">
+                <label for="">Sexe :</label>
+                <span class="radioButton" name="Male" value="Male"></span>
+                <label for="r1">Masculin</label>
+                <span class="radioButton" id="Female" value="Female"></span>
+                <label for="r2">Féminin</label>
+
+            </div>
+              <div class="input-container">
+                  <input type="tel" name="tel" id="tel"><label for="tel">Numéro du téléphone</label>
+              </div>    
+                <div class="input-container">
+                    <input type="text" name="zip" id="zip">
+                    <label for="zip">Code postal</label>
+                    </div> 
+              <div class="input-container">
+                <label for="address">Adresse</label> <textarea name="address" id="address" cols="20" rows="5"></textarea>
+            </div> 
+            <div class="input-container">
+                <input type="submit" name="submit" id="valider" value="Valider"><input type="submit" name="submit" id="Annuler" value="Annuler">
+            </div>  
+            
+        </div>
+    </form>
+<script>
+    const radioBtn=document.querySelectorAll(".radioButton")
+    
+    radioBtn.forEach(element => {
+        element.addEventListener("click",function () { 
+            radioBtn.forEach(btnR => {
+                btnR.style.backgroundColor="transparent"
+            });
+       element.style.background="rgb(248, 232, 0)";
+    })
+    });
+   
+            
+        
+    
+</script>
+</body>
+</html>
